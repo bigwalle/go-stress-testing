@@ -8,11 +8,11 @@
 package client
 
 import (
-	"crypto/tls"
-	"fmt"
-	"io"
-	"net/http"
-	"time"
+  "crypto/tls"
+  "fmt"
+  "io"
+  "net/http"
+  "time"
 )
 
 // HTTP 请求
@@ -53,7 +53,7 @@ func HttpRequest(method, url string, body io.Reader, headers map[string]string, 
 
 	resp, err = client.Do(req)
 	if err != nil {
-		fmt.Println("请求失败:", err)
+		fmt.Println("请求失败11:", err)
 
 		return
 	}

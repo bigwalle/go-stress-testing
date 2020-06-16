@@ -188,7 +188,7 @@ go 实现的压测工具，每个用户用一个协程的方式模拟，最大�
 - 机器: 峰值时间每秒钟请求数(QPS) / 单台机器的QPS = 需要的机器的数量
 
 - 假设:网站每天的用户数(100W)，每天的用户的访问量约为3000W PV，这台机器的需要多少QPS?
-> ( 30000000\*0.8 ) / (86400 * 0.2) ≈ 1389 (QPS)
+> ( 30000000*0.8 ) / (86400 * 0.2) ≈ 1389 (QPS)
 
 - 假设:单台机器的的QPS是69，需要需要多少台机器来支撑？
 > 1389 / 69 ≈ 20
@@ -496,7 +496,11 @@ go run main.go -c 1 -n 1 -d true -u 'https://page.aliyun.com/delivery/plan/list'
   -H 'cookie: aliyun_choice=CN; JSESSIONID=J8866281-CKCFJ4BUZ7GDO9V89YBW1-KJ3J5V9K-GYUW7; maliyun_temporary_console0=1AbLByOMHeZe3G41KYd5WWZvrM%2BGErkaLcWfBbgveKA9ifboArprPASvFUUfhwHtt44qsDwVqMk8Wkdr1F5LccYk2mPCZJiXb0q%2Bllj5u3SQGQurtyPqnG489y%2FkoA%2FEvOwsXJTvXTFQPK%2BGJD4FJg%3D%3D; cna=L3Q5F8cHDGgCAXL3r8fEZtdU; isg=BFNThsmSCcgX-sUcc5Jo2s2T4tF9COfKYi8g9wVwr3KphHMmjdh3GrHFvPTqJD_C; l=eBaceXLnQGBjstRJBOfwPurza77OSIRAguPzaNbMiT5POw1B5WAlWZbqyNY6C3GVh6lwR37EODnaBeYBc3K-nxvOu9eFfGMmn' \
   -data 'adPlanQueryParam=%7B%22adZone%22%3A%7B%22positionList%22%3A%5B%7B%22positionId%22%3A83%7D%5D%7D%2C%22requestId%22%3A%2217958651-f205-44c7-ad5d-f8af92a6217a%22%7D'
 ```
-
+```go
+go run main.go -c 1 -n 1 -d true -u 'http://127.0.0.1:8080/api/digitalkey-manager-15/v1/digitalkey/1d7IqH6djoYPvwRO' \
+        -H 'accept: application/json, text/plain, */*' \
+        -H 'content-type: application/x-www-form-urlencoded' \
+```
 - 使用 curl文件进行压测
 
 curl是Linux在命令行下的工作的文件传输工具，是一款很强大的http命令行工具。
@@ -607,7 +611,12 @@ func main() {
 ```
 ./go_stress_testing_linux -c 100 -n 10000 -u http://127.0.0.1:8088/
 ```
+```go
 
+
+ go run main.go -c 100 -n 10000 -p curl/digitalkey15.txt
+
+```
 
 - 压测结果
 

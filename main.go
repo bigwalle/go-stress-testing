@@ -10,8 +10,8 @@ package main
 import (
 	"flag"
 	"fmt"
-	"go-stress-testing/model"
-	"go-stress-testing/server"
+	"github.com/welcome112s/go-stress-testing/model"
+	"github.com/welcome112s/go-stress-testing/server"
 	"runtime"
 	"strings"
 )

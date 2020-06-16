@@ -8,9 +8,9 @@
 package golink
 
 import (
-	"go-stress-testing/heper"
-	"go-stress-testing/model"
-	"go-stress-testing/server/client"
+	"github.com/welcome112s/go-stress-testing/heper"
+	"github.com/welcome112s/go-stress-testing/model"
+	"github.com/welcome112s/go-stress-testing/server/client"
 	"sync"
 	"time"
 )

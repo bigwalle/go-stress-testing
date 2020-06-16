@@ -9,7 +9,7 @@ package statistics
 
 import (
 	"fmt"
-	"go-stress-testing/model"
+	"github.com/welcome112s/go-stress-testing/model"
 	"strings"
 	"sync"
 	"time"
